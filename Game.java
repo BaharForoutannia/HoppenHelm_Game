@@ -27,7 +27,7 @@ import java.util.Random;
 public class Game extends Application {
 
     private Rectangle playerRectangle = new Rectangle();
-    private List<Rectangle> pinkBlocks = new ArrayList<>();
+    private List<Block> pinkBlocks = new ArrayList<>();
     private int pinkBlockIndex = 0;
     private boolean timerActive = false;
 
@@ -37,7 +37,7 @@ public class Game extends Application {
         int initialY = 650;
 
         for (int i = 0; i < 3; i++) {
-            Rectangle pinkBlock = new Rectangle(50, 50, Color.HOTPINK);
+            Block pinkBlock = new Block(50, 50, Color.HOTPINK);
             pinkBlock.setTranslateX(850 + i * 60);
             pinkBlock.setTranslateY(20);
             pinkBlocks.add(pinkBlock);
@@ -45,7 +45,7 @@ public class Game extends Application {
         }
 
         for (int i = 0; i < 200; i++) {
-            Rectangle block = new Rectangle(200, 100, generateRandomNumber() % 4 == 0 ? Color.RED : Color.GRAY);
+            Block block = new Block(200, 100);
             block.setTranslateY((double) initialY);
             hbox.getChildren().add(block);
         }
@@ -67,7 +67,7 @@ public class Game extends Application {
                     node.setTranslateX(node.getTranslateX() - 200);
                     if (node instanceof Rectangle && node.getBoundsInParent().intersects(playerRectangle.getBoundsInParent())) {
                         Rectangle block = (Rectangle) node;
-                        if(block.getFill().equals(Color.RED) && !timerActive) {
+                        if (block.getFill().equals(Color.RED) && !timerActive) {
                             timerActive = true;
                             ObjectProperty<java.time.Duration> remainingDuration
                                     = new SimpleObjectProperty<>(java.time.Duration.ofSeconds(2));
@@ -82,7 +82,7 @@ public class Game extends Application {
                                         if (pinkBlockIndex < pinkBlocks.size()) {
                                             pinkBlocks.get(pinkBlockIndex).setFill(Color.WHITE);
                                             pinkBlockIndex++;
-                                            if(pinkBlockIndex == 3) {
+                                            if (pinkBlockIndex == 3) {
                                                 Image blockLose = new Image("file:///home/bahar/univercity/HoppenHelm/loseGame.jpeg");
                                                 ImageView imageView = new ImageView(blockLose);
                                                 imageView.setFitHeight(primaryStage.getHeight());
@@ -91,7 +91,6 @@ public class Game extends Application {
                                                 Scene scene1 = new Scene(root, 400, 300);
                                                 primaryStage.setScene(scene1);
                                                 primaryStage.show();
-                                                System.out.println("you lose");
                                             }
                                         }
                                         timerActive = false;
@@ -123,10 +122,5 @@ public class Game extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    public static int generateRandomNumber() {
-        Random random = new Random();
-        return random.nextInt(10);
     }
 }
