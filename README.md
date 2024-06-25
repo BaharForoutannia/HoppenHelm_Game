@@ -4,6 +4,6 @@ java project
 graphics with javafx
 
 programmer:
-Bita Shahri
-Negin Mahdviyan
+Bita Shahri, 
+Negin Mahdviyan, 
 Bahar Foroutannia
