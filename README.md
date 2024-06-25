@@ -1,2 +1,9 @@
 # HoppenHelm_Game
-java project HoppenHelm Game 
+HoppenHelm Game 
+java project 
+graphics with javafx
+
+programmer:
+Bita Shahri
+Negin Mahdviyan
+Bahar Foroutannia
