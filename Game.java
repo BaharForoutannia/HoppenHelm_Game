@@ -1,4 +1,5 @@
-package com.example.example;
+package com.example.hoppenhelmgame;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -17,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,14 +88,10 @@ public class Game extends Application {
                                                 imageView.setFitHeight(primaryStage.getHeight());
                                                 imageView.setFitWidth(primaryStage.getWidth());
                                                 root.getChildren().addAll(imageView);
-                                                Scene scene1 = new Scene(root, 400,300);
+                                                Scene scene1 = new Scene(root, 400, 300);
                                                 primaryStage.setScene(scene1);
                                                 primaryStage.show();
-                                                //Media media = new Media(new File("")) {
-
-
-
-
+                                                System.out.println("you lose");
                                             }
                                         }
                                         timerActive = false;
@@ -114,6 +112,7 @@ public class Game extends Application {
                             Rectangle block = (Rectangle) node;
                             if (block.getFill().equals(Color.RED) && block.getBoundsInParent().intersects(playerRectangle.getBoundsInParent())) {
                                 block.setFill(Color.GRAY);
+                                timerActive = false; // این خط را اضافه کنید
                             }
                         }
                     }
