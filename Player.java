@@ -1,4 +1,4 @@
-package com.example.example;
+package com.example.hoppenhelmgame;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -6,10 +6,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-//class player represents the player
+//class Player represents the player
 public class Player {
 
-    //attributes from class Playerclass
+    //attributes from Player class
     //player attribute data type is Rectangle
     private Rectangle player;
     //root attribute data type is Group
