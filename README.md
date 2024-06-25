@@ -8,6 +8,6 @@ Bita Shahri,
 Negin Mahdviyan, 
 Bahar Foroutannia
 
-class: 
-player, 
-game
+classes: 
+class Player, 
+class Game
