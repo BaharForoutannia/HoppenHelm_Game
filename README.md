@@ -7,3 +7,7 @@ programmer:
 Bita Shahri, 
 Negin Mahdviyan, 
 Bahar Foroutannia
+
+class: 
+player, 
+game
