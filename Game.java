@@ -27,16 +27,16 @@ import java.util.Random;
 public class Game extends Application {
 
     private Rectangle playerRectangle = new Rectangle();
-    private List<Block> pinkBlocks = new ArrayList<>();
+    private List<Block> pinkBlocks = new ArrayList<>();//use arraylist for updating the blocks
     private int pinkBlockIndex = 0;
     private boolean timerActive = false;
 
     public void start(Stage primaryStage) {
         Group root = new Group();
-        HBox hbox = new HBox(1);//block haye ofoghi
+        HBox hbox = new HBox(1);//horizontal block
         int initialY = 650;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {//use this for loop for showing the chance
             Block pinkBlock = new Block(50, 50, Color.HOTPINK);
             pinkBlock.setTranslateX(850 + i * 60);
             pinkBlock.setTranslateY(20);
@@ -44,7 +44,7 @@ public class Game extends Application {
             root.getChildren().add(pinkBlock);
         }
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 500; i++) {
             Block block = new Block(200, 100);
             block.setTranslateY((double) initialY);
             hbox.getChildren().add(block);
