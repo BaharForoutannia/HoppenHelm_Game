@@ -64,7 +64,7 @@ public class Game extends Application {
         scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 for (Node node : hbox.getChildren()) {
-                    node.setTranslateX(node.getTranslateX() - 200);
+                    node.setTranslateX(node.getTranslateX() - 200);//for moving all bolcks to the left(it is nesecery for having action on enviroment of Game
                     if (node instanceof Rectangle && node.getBoundsInParent().intersects(playerRectangle.getBoundsInParent())) {
                         Rectangle block = (Rectangle) node;
                         if (block.getFill().equals(Color.RED) && !timerActive) {
