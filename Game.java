@@ -111,7 +111,7 @@ public class Game extends Application {
                             Rectangle block = (Rectangle) node;
                             if (block.getFill().equals(Color.RED) && block.getBoundsInParent().intersects(playerRectangle.getBoundsInParent())) {
                                 block.setFill(Color.GRAY);
-                                timerActive = false; // این خط را اضافه کنید
+                                timerActive = false; 
                             }
                         }
                     }
