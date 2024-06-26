@@ -33,7 +33,7 @@ public class Game extends Application {
 
     public void start(Stage primaryStage) {
         Group root = new Group();
-        HBox hbox = new HBox(1);
+        HBox hbox = new HBox(1);//block haye ofoghi
         int initialY = 650;
 
         for (int i = 0; i < 3; i++) {
